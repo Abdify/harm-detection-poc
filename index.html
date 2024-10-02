@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/harm-detection-poc/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Harm Check</title>
+    <style type="text/tailwindcss">
+      canvas {
+        @apply md:absolute md:left-1/2 md:top-0;
+      }
+      button {
+        @apply px-2 py-1 bg-gray-300 rounded hover:bg-gray-500 disabled:bg-gray-100 disabled:text-gray-500;
+      }
+    </style>
+    <script type="module" crossorigin src="/harm-detection-poc/assets/index-P2bYt7Gc.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="w-full md:w-1/2 grid gap-3 p-3">
+        <h1 class="text-2xl font-bold">Harm Check</h1>
+        <textarea id="texts-list" class="h-[30vh] w-full overflow-y-auto font-mono border rounded"></textarea> 
+
+        <p class="text-center font-bold">Model status: <span id="status">Not Ready Yet</span></p>
+
+        <div class="mx-auto">
+          <button id="worker-btn" disabled>Classify with Web Workers</button>
+          <button id="main-thread-btn" disabled>Use Main Thread</button>
+
+        </div>
+
+        <hr class="mx-10" />
+      </div>
+
+
+      <div id="results" class="h-[50vh] overflow-y-auto"></div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+  </body>
+</html>
